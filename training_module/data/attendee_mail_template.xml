@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="remind_attendee_email" model="mail.template">
+        <field name="name">Reminder</field>
+        <field name="model_id" ref="training_module.model_res_training"/>
+        <field name="email_from">the_rock@gmail.com</field>
+        <field name="email_to">${object.attendee_ids.email|safe}</field>
+        <field name="subject">Reminder for Training</field>
+        <field name="body_html"><![CDATA[
+    <p>Hi, ${object.attendee_ids.name}</p>
+
+    <p>This email is reminder for your ${object.name} training</p>
+
+    <p>Details as below:</p>
+
+    <p>Course: ${object.course_id.name}</p>
+    <p>Start: ${object.start_date_time}</p>
+    <p>End: ${object.end_date_time}</p>
+
+
+    <p>Note: If you do not expect this, you can safely ignore this email.</p>]]></field>
+    </record>
+</odoo>

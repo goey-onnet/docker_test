@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+        <report
+            string="Training_Report"
+            id="training_report"
+            model="res.training"
+            report_type="qweb-pdf"
+            name="training_module.report_training"
+            file="training_module.report_training"
+            menu="True"
+        />
+    </data>
+</openerp>

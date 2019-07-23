@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <odoo>
+        <template id="report_training">
+            <t t-call="web.html_container">
+                <div t-foreach="docs" t-as="o">
+                    <div class="page">
+                         <div class="row">
+                            <div class="col-xs-12">
+                                <strong><span style="font-size:25px;" t-field="o.name"/></strong>
+                            </div>
+                         </div>
+                         <div class="row col-xs-12" style="margin-top:20px;">
+                            <div style="float: left;width:50%;" >
+                                <table class="header_table">
+                                    <tr>
+                                        <td>Course:
+                                        </td>
+                                        <td>
+                                            <span t-field="o.course_id"/>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Start:
+                                        </td>
+                                        <td>
+                                            <span t-field="o.start_date_time"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>End:
+                                        </td>
+                                        <td>
+                                            <span t-field="o.end_date_time"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                         </div>
+                         <div class="row">
+                            <div class="row col-xs-12" style="margin-top:20px;">
+                             <table style="" class="table table-condensed">
+                                 <thead>
+                                     <th>Attendees</th>
+                                 </thead>
+                                 <tr t-foreach="o.attendee_ids" t-as="a">
+                                     <td>
+                                         <span t-esc="a.name" />
+                                     </td>
+                                 </tr>
+                             </table>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+    </odoo>
