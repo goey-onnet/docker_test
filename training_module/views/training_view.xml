@@ -47,7 +47,7 @@
                         <group>
                            <field name="start_date_time"/>
                            <field name="end_date_time"/>
-                           <field name="total_hours"/>
+                           <field name="total_hrs"/>
                            <field name="tag_ids" widget="many2many_tags"/>
                        </group>
                    </group>
