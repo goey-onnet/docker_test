@@ -22,7 +22,7 @@ class Training(models.Model):
 
     name = fields.Char("Name", required=True)
     trainer_id = fields.Many2one('res.partner', domain=[('is_trainer', '=', True)], required=True)
-    start_date_time = fields.Datetime('Start Timeeee')
+    start_date_time = fields.Datetime('Start Time')
     end_date_time = fields.Datetime('End Timeeee')
     total_hrs = fields.Float('Total Hours')
     course_id = fields.Many2one('res.course', required=True, string="Course")
