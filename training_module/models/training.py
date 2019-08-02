@@ -24,7 +24,7 @@ class Training(models.Model):
     trainer_id = fields.Many2one('res.partner', domain=[('is_trainer', '=', True)], required=True)
     start_date_time = fields.Datetime('Start Time')
     end_date_time = fields.Datetime('End Time')
-    total_hours = fields.Float('Total Hours')
+    total_hours = fields.Float('Total Hrs')
     course_id = fields.Many2one('res.course', required=True, string="Course")
     tag_ids = fields.Many2many('res.partner.category', 'res_training_partner_category_rel', 'training_id', 'category_id', string ="Tags")
     state = fields.Selection([('unconfirmed', 'Unconfirmed'),
