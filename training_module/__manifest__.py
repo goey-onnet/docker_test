@@ -14,8 +14,8 @@
     'depends' : ['base','contacts'],
     'data': [
         'views/res_partner_view.xml',
-        'views/training_view.xml',
         'views/course_view.xml',
+        'views/training_view.xml',
         'security/ir.model.access.csv',
         'report/training_report.xml',
         'report/training_report_template.xml',

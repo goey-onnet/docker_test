@@ -22,9 +22,15 @@ class Training(models.Model):
 
     name = fields.Char("Name", required=True)
     trainer_id = fields.Many2one('res.partner', domain=[('is_trainer', '=', True)], required=True)
+<<<<<<< HEAD
     start_date_time = fields.Datetime('Start Time')
     end_date_time = fields.Datetime('End Time')
     total_hours = fields.Float('Total Hrs')
+=======
+    start_date_time = fields.Datetime('Start Timee')
+    end_date_time = fields.Datetime('End Timeee')
+    total_hrs = fields.Float('Total Hours')
+>>>>>>> 79da7776c4c248d192e15e1a8de870b6016e1405
     course_id = fields.Many2one('res.course', required=True, string="Course")
     tag_ids = fields.Many2many('res.partner.category', 'res_training_partner_category_rel', 'training_id', 'category_id', string ="Tags")
     state = fields.Selection([('unconfirmed', 'Unconfirmed'),
@@ -49,7 +55,7 @@ class Training(models.Model):
     @api.onchange('start_date_time', 'end_date_time')
     def on_change_start_end_date(self):
         if self.start_date_time and self.end_date_time:
-            self.total_hours = (self.end_date_time - self.start_date_time).days
+            self.total_hrs = (self.end_date_time - self.start_date_time).days
 
     @api.onchange('course_id')
     def on_change_course_id(self):
